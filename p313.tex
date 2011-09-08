@@ -1,0 +1,20 @@
+\documentclass[a4paper]{article}
+\usepackage{multibib}
+\usepackage[pdftex,breaklinks=true]{hyperref}
+\usepackage{polski}
+\usepackage[latin2]{inputenc}
+
+\newcites{Neto}{Netografia} %% przyk³ad czego nie nale¿y robiæ:-)
+
+
+\begin{document}
+Powo³ania do g³ównego spisu~\cite{Otrembus1977,Hytz1925}.
+Odes³anie do spisu zatytu³owanego ,,Netografia''~\citeNeto{onet2010}
+ %%  ... .. ...
+\bibliographystyle{plain}
+\bibliography{b313}
+
+\bibliographystyleNeto{alpha}
+\bibliographyNeto{b313} % wstaw Netografiê
+
+\end{document}

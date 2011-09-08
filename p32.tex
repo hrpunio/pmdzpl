@@ -1,0 +1,15 @@
+\documentclass[a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\setlength{\tabcolsep}{3mm}
+\newcommand{\textB}{\fbox{ay br cu dh eq}}
+.\begin{tabular}%%
+{@{\extracolsep{4mm}}l|l|@{\hspace{5mm}}l@{\extracolsep{0mm}}l|}\hline
+\textB&\textB&\textB&\textB\\ \hline \end{tabular}.
+\par %% druga tabela:
+.\begin{tabular}{l|@{\extracolsep{0mm}}l|l@{\extracolsep{0mm}}l|}\hline
+\textB&\textB&\textB&\textB\\ \hline \end{tabular}.
+
+\end{document}

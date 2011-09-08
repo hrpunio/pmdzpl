@@ -1,0 +1,17 @@
+\documentclass[a4paper]{article}
+\usepackage[pdftex,breaklinks=true,]{hyperref}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\setlength{\tabcolsep}{9mm} %% domyślny odstęp pomiędzy kolumnami
+\setlength{\fboxrule}{.8pt}\setlength{\fboxsep}{-\fboxrule}
+\newcommand{\textB}{\fbox{ay br cu dh eq}}
+.\begin{tabular}%%
+  {@{}l@{\hspace{1mm}}|l@{\hspace{3mm}}l@{\hspace{6mm}}l@{}} \hline
+\textB&\textB&\textB&\textB\\ \hline \end{tabular}.
+\par %% druga tabela:
+.\begin{tabular}{l|ll|} \hline \textB&\textB&\textB\\ \hline
+\end{tabular}.
+
+\end{document}

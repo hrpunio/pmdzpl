@@ -1,0 +1,28 @@
+\documentclass[a4paper]{report}
+\usepackage{polski}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\listanswername}{Odpowiedzi do zadań}
+\newlistof[chapter]{Answers}{ans}{\listanswername}
+
+\newenvironment{Zadanie}[1]{%
+  \refstepcounter{Answers}%
+  \par\noindent\textbf{Zadanie \theAnswers. }\par
+  \addcontentsline{ans}{Answers}{\protect\numberline{\theAnswers}#1}\par}
+
+\begin{document}
+
+\chapter{Zadanie b. proste}
+
+\begin{Zadanie}{4}
+Ile jest $2 \times 2$?
+\end{Zadanie}
+
+\begin{Zadanie}{zero}
+Ile jest $2 - 2$?
+\end{Zadanie}
+
+\listofAnswers
+
+\end{document}

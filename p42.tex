@@ -1,0 +1,20 @@
+\documentclass[a4paper]{article}
+\usepackage{polski}
+\usepackage{calc} %% potrzebny w konstrukcji: \labelwidth+\labelsep (patrz niżej)
+\usepackage[utf8]{inputenc}
+
+\newenvironment{Description}{%%
+ \begin{list}{}{\renewcommand{\makelabel}[1]{\mbox{\itshape ##1:}\hfil}
+ \setlength{\labelwidth}{1.4in}
+ \setlength{\leftmargin}{\labelwidth+\labelsep}}}{\end{list}}
+
+\begin{document}
+
+\begin{Description}
+\item[Anax imperator] Gatunek ważki różnoskrzydłej z~rodziny żagnicowatych...
+\item[Leucorrhinia albifrons] Ważka niedużej wielkości ...
+\item[Orthetrum cancellatum] Jeden z~najpospolitszych gatunków w Polsce...
+\end{Description}
+
+\end{document}
+

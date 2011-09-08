@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+\usepackage{array,longtable}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\textheight=11\baselineskip %% smiesznie mala wysokosc kolumny
+
+\begin{document}
+
+\begin{longtable}{|l|>{\itshape}l|r|r|}
+ \caption{Tytuł tabeli}\\\hline
+ \multicolumn{4}{|c|}{Główka tabeli na pierwszej stronie}\\ \hline 
+  Nazwa zwyczajowa & Nazwa łacińska & $\bar W$ (hy) & $W_{\textrm{max}}$ \\ \hline
+  K1 & K2 & K3 & K4 \\ \hline
+ \endfirsthead
+ \hline
+ \multicolumn{4}{|c|}{Główka tabeli na następnych stronach}\\
+ \hline K1 & K2 & K3 & K4\\\hline
+ \endhead
+ \hline \multicolumn{4}{|c|}{Stopka tabeli na pierwszej stronie}\\ \hline
+ \endfoot
+ \hline \multicolumn{4}{|c|}{Stopka na ostatniej stronie}\\
+ \hline
+ \endlastfoot
+Pasikonik zielony     & Tettigonia viridissima  &   2,6  &  2,9 \\
+Pasikonik śpiewający  & Tettigonia cantans      &   2,7  &  3,0 \\
+Karaluch              & Blatta orientalis       &   3,0  &  4,0 \\
+Mucha domowa          & Musca domestica         &   4,1  &  4,2 \\
+Bolimuszka kleparka   & Stomoxys calcitrans     &   0,5  &  0,5 \\
+Mól włosienniczek     & Tineola bisselliella    &   0,8  &  0,9 \\
+Omacnica spichrzanka  & Plodia interpunctella   &   0,8  &  0,9 \\
+Rybik cukrowy         & Lepisma saccharina      &   1,1  &  1,2 \\
+Mrówka faraona        & Monomorium pharaonis    &   3,5  &  3,7 \\
+Pluskwa domowa        & Cimex lectularius       &   4,2  &  4,4 \\
+Pstrokaczek ukraiński & Poecilimon ukrainicus   &   2,5  &  2,9 \\
+ %%
+Zgniłówka pokojowa    & Fannia canicularis      &   0,6  &  0,9 \\
+Ścierwica mięsówka    & Sarcophaga carnaria     &   0,4  &  0,9 \\
+Żyrytwa pluskwowata   & Ilyocoris cimicoides    &   0,4  &  0,9 \\
+Wątlik charłaj        & Leptophyes punctatissima  & 2,0  &  2,5 \\
+Trajkotka czerwona    & Psophus stridulus       &   2,2  &  2,9 \\
+Zalotka spłaszczona   & Leucorrhinia caudalis   &   2,5  &  2,8 \\
+Świtezianka dziewica  & Calopteryx virgo        &   6,2  &  6,1 \\
+Świtezianka błyszcząca& Calopteryx splendens    &   6,3  &  6,4 \\
+Husarz władca         & Anax imperator          & $-$0,1 &  0,0 \\
+Skorek pospolity      & Forficula auricularia   &   0,1  &  0,2 \\
+\end{longtable}
+
+
+\end{document}

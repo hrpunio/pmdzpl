@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\makeatletter
+
+\def\kierunek#1{\gdef\@kierunek{#1}} \def\@kierunek{???}
+\def\opiekun#1{\gdef\@opiekun{#1}} \def\@opiekun{???}
+
+\renewcommand{\maketitle}{\begin{titlepage}%
+  \begin{center}%
+      {\large UNIWERSYTET PENDOLOGICZNY W DRUSKIENNIKACH\par}
+      \vspace{1cm plus 1fill} 
+      \@author \par \vspace{8mm plus 1mm minus 2mm}
+      {\huge\textbf{\@title}\par}
+      \vspace{2cm plus 1.5fill}
+      \begin{flushright}\large
+        \begin{tabular}{l}
+          Praca magisterska na kierunku:\\[3pt] \@kierunek \\[3pt]
+          Promotor: \\[3pt] \bfseries \@opiekun \end{tabular}
+      \end{flushright}
+      \vspace{15mm plus .1fill}
+      {\large \@date\par}
+  \end{center}
+\end{titlepage}}
+\makeatother
+ %%%
+\title{Ekonofizyka jądrowa -- zagrożenia i~szanse}
+\kierunek{Ekonofizyka jądrowa}
+\opiekun{prof. dr hab.~Zefiryn Matysek}
+\date{2011}
+ %%
+\begin{document}
+
+\maketitle
+
+\end{document}

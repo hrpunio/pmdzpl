@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='iso-8859-2' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" >
+ <!--"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-2" />
+   <title>Klasa wkmgr</title>
+</head>
+<body>
+
+<h2 class='main'>Klasa <code>wkmgr</code></h2>
+
+<p>
+ Klasa <code>wkmgr</code> umożliwia przygotowanie pracy magisterskiej
+ lub licencjackiej zgodnie z typowymi wymogami obowiązującym przy
+ redagowaniu tego rodzaju prac.
+</p>
+
+
+<h3 id='opcz'>Opcje klasy <code>wkmgr</code>:</h3>
+<dl>
+<dt><code>magisterska</code></dt>
+<dd>praca magisterska (wartość domyślna);</dd>
+
+<dt><code>licencjacka</code></dt>
+<dd>praca licencjacka;</dd>
+
+<dt><code>brudnopis</code></dt>
+<dd>wstępna wersja pracy: drukowanie z pojedynczym odstępem
+i oznaczanie każdej strony numerem wersji oraz datą;</dd>
+
+<dt><code>xodstep</code></dt><dd>zwiększenie odstępu 
+ między wierszami.</dd>
+</dl>
+
+<h3 id='dodo'>Dodatkowe polecenia i środowiska zdefiniowane w klasie <code>wkmgr</code></h3>
+
+<dl>
+
+ <dt><code>\UniversityName</code></dt>
+ <dd>Nazwa szkoły, drukowana na górze strony tytułowej;</dd>
+
+ <dt><code>\oswiadczenie</code></dt>
+ <dd>tekst oświadczenia o samodzielnym wykonaniu pracy (tekst oświadczenie
+  może wymagać dostosowania do formuły stosowanej w danej szkole). Zwykle polecenie
+  to należy umieścić na na końcu pracy, tj. przed <code>\end{document}</code>;</dd>
+
+ <dt><code>\autor</code></dt>
+ <dd>imię oraz nazwisko autora;</dd>
+
+ <dt><code>\nralbumu</code></dt>
+ <dd>numer albumu;</dd>
+
+ <dt><code>\email</code></dt> 
+ <dd>adres email autora (opcjonalnie);</dd>
+
+ <dt><code>\kierunek</code></dt>
+ <dd>nazwa kierunku, np. Imagineskopia;</dd>
+
+ <dt><code>\opiekun</code></dt>
+ <dd>tytuł naukowy, imię i nazwisko promotora;</dd>
+
+ <dt><code>\miejsce</code></dt>
+ <dd>miejsce obrony;</dd>
+
+ <dt><code>\keywords</code></dt>
+ <dd>lista słów kluczowych (oddzielonych przecinkami);</dd>
+
+ <dt><code>abstract</code></dt> 
+ <dd>streszczenie (środowisko);</dd>
+
+ <dt><code>\introduction</code></dt> 
+ <dd>wstęp;</dd>
+
+ <dt><code>\summary</code></dt> 
+ <dd>zakończenie;</dd>
+
+ <dt><code>\source</code></dt> 
+ <dd>źródło, umieszczane pod tabelą i rysunkiem;</dd>
+
+ <dt><code>\nrwersji</code></dt> 
+ <dd>etykieta wersji dokumentu.</dd>
+</dl>
+
+<h3 id='pozo'>Pozostałe uwagi</h3>
+
+<p>
+ Polecenia <code>\autor</code>, <code>\nralbumu</code> (ewentualnie
+ <code>\email</code>) można wstawić wielokrotnie jeżeli praca jest
+ dziełem kilku autorów.
+</p>
+
+<p>Polecenia: <code>\UniversityName</code> oraz <code>\date</code>
+należy wstawić w preambule dokumentu (przez <code>begin{document}</code>.
+</p>
+
+</body>
+</html>
+<!--
+Local variables:
+ mode: nxml
+ LocalWords: Przechlewski
+ ispell-local-dictionary: "polish"
+End:
+-->
+

@@ -1,0 +1,567 @@
+%% Przyk³ad #2 pracy magisterskiej z pakietem wkmgr (zastosowanie bibtexa do tworzenia spisu literatury)
+%% 
+\documentclass[brudnopis,xodstep]{wkmgr}
+%%
+%% Sk³ad alternatywnymi krojami pisma
+%% +--------------------------------+
+%% sk³ad fontami podobnymi do kroju Palatino:
+ \usepackage{tgpagella,pxfonts,qpxmath} %% pxfonts
+%% sk³ad fontami podobnymi do kroju Times:
+% \usepackage{tgtermes,txfonts,qtxmath} %% txfonts
+%%
+\usepackage[T1]{fontenc}
+\usepackage[latin2]{inputenc}
+\usepackage[T1]{polski}
+\usepackage{array}
+
+%% podpisy pod rysunkami/tytu³y tabel nad tabelami; oba od lewej a nie centrowane ; z³o¿one mniejszym stopniem
+\usepackage[font=small,justification=raggedright,singlelinecheck=off,tableposition=top]{caption}
+
+%% klikalne linki w pliku PDF 
+%% +------------------------+
+%% opcja pagebackref generuje linki w spisie literatury (do strony na której zacytowano pozycjê):
+\usepackage[breaklinks,pagebackref]{hyperref}
+%% \usepackage[breaklinks]{hyperref} %% 
+
+%% Cytowanie autor-rok (pakiet natbib):
+%% +---------------------------------+
+\usepackage[authoryear]{natbib}
+\bibliographystyle{papalike} %% <---
+%%
+%%
+%% Paginy (opcjonalne, odkomentuj poni¿sze je¿eli maj± byæ dodane):
+% \usepackage{fancyhdr}
+% \pagestyle{fancyplain}
+% \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\thesection{.} #1}}
+% \lhead[\fancyplain{}{\renewcommand\familydefault{\rmdefault}%
+%       \normalfont \small\itshape\thepage}]
+%      {\fancyplain{}{\renewcommand\familydefault{\rmdefault}%
+%       \normalfont \small\itshape\rightmark}}
+% \rhead[\fancyplain{}{\renewcommand\familydefault{\rmdefault}%
+%      \normalfont \small\itshape\leftmark}]
+%     {\fancyplain{}{\renewcommand\familydefault{\rmdefault}%
+%      \normalfont \small\itshape\thepage}}
+% \cfoot[]{}
+%%
+
+
+%%
+%% Opcjonalnie identyfikator dokumentu (drukowany tylko z w³±czon± opcj± `brudnopis'):
+\nrwersji {0.1}
+
+% Dane autora(ów):
+\author{Józef Mi¶kiewicz}
+\nralbumu{0123456789}
+\email{walenty@szczesny.com.pl}
+
+%% Je¿eli jest drugi autor:
+%% \author{Monika A.~Szczêsna-Wo¶}
+%% \nralbumu{rr000000002}
+
+% Tytu³ pracy:
+\title{Tytu³ pracy}
+
+% Kierunek, tj. katedra/instytut promotora:
+\kierunek {Pendologia eksperymentalna}
+
+% Rok obrony:
+\date{2011}
+
+% Nazwa szko³y:
+\UniversityName{Uniwersytet Kaszubski -- Wydzia³ Pendologii}
+% Je¿eli nie podano miejsca zostanie wpisany `Sopot'
+\miejsce{Wejherowo}
+
+% Tytu³ naukowy, imiê i nazwisko promotora:
+\opiekun{dr~hab. Jan Kowalski}
+
+%
+% Miejsce na deklaracje w³asnych poleceñ:
+\newcommand{\filename}[1]{\texttt{#1}}
+
+\def\SITI{SI/TI} %%%
+\def\ISTI{SI/TI} %%%
+\def\UTAUT{UTAUT} %%%
+%%
+
+\makeatletter 
+% polecenie zawieraj±ce @ musz± byæ wew \makeatletter ... \makeatother
+%% Poprawienie b³êdu w pakiecie pxfonts.sty
+\makeatletter %%
+\def\T@n@@nc@d@ngM@cr@M@d{}
+\makeatother
+
+\begin{document}
+
+%%
+\nocite{beebe,p.perl} %% do³±cza niecytowane
+%%\nocite{*} %% ** do³±cza wszystko **
+
+% Streszczenie/S³owa kluczowe (opcjonalne)
+\begin{abstract}
+Model Akceptacji Technologii jest najczê¶ciej stosowan± teori± obja¶niaj±c± wykorzystanie
+i~akceptacjê systemów informacyjnych w~praktyce badawczej Informatyki Ekonomicznej
+\end{abstract}
+%% Je¿eli nie ma byæ s³ów kluczowych nie wstawiaj deklaracji \keywords{...}
+%% uwaga: polecenie \keywords{} z `pustym' argumentem nie zadzia³a
+%%\keywords{SGML, XML, XSL, dokumenty elektroniczne, dokumenty strukturalne}
+
+% Tytu³/spis tre¶ci
+\maketitle
+%
+
+\introduction
+
+Wstêp o~objêto¶ci 3--5 stron winien zawieraæ: 
+
+ogólne wprowadzenie do problemu rozpatrywanego w~pracy:
+
+opis problemu badawczego, okre¶lenie celu pracy (pytañ/problemów badawczych);
+
+postawienie hipotez;
+
+okre¶lenie zakresu pracy, metod, technik i~narzêdzi badawczych, 
+
+omówienie konstrukcji pracy.
+
+%%
+\chapter{Tytu³ rozdzia³u pierwszego}
+\section{Tytu³ punktu pierwszego}
+
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+
+\subsection{Tytu³ podpunktu pierwszego}
+
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+
+\subsection{Tytu³ podpunktu drugiego}
+
+%% wiêcej podpunktów nie ma -- odkomentuj poni¿sze a LaTeX zg³osi b³±d:
+%% \subsubsection{Tytu³ podpunktu drugiego}
+
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+Tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy, tre¶æ punktu trzy.
+
+
+\section{Tytu³ punktu drugiego}
+
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+Tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery, tre¶æ punktu cztery.
+
+\section{Tytu³ punktu trzeciego}
+
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+Tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ, tre¶æ punktu piêæ.
+
+
+\section{Tytu³ podpunktu pierwszego}
+
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+Tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ, tre¶æ punktu sze¶æ.
+
+
+\section{Tytu³ podpunktu drugiego}
+
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+Tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem, tre¶æ punktu siedem.
+
+
+%%
+\chapter{Model Akceptacji Technologii \label{TAM-def-punkt}}
+\section{Podstawowe informacje \label{TAM-def}}
+
+Model Akceptacji Technologii (\emph{Technology Acceptance Model}, TAM)
+jest najczê¶ciej stosowan± teori± obja¶niaj±c± wykorzystanie
+i~akceptacjê systemów informacyjnych w~praktyce badawczej Informatyki
+Ekonomicznej~\citep{VenkateshEtAl03,VenkateshDavis00}.
+Lee i inni~\citeyearpar{LeeKozarLarsen2003} okre¶laj± model TAM jak
+,,najczê¶ciej stosowan± teoriê opisuj±c± 
+indywidualn± akceptacjê systemów informacyjnych''.
+Model TAM zosta³ zaadaptowany z~rozwiniêtej na gruncie psychologii
+spo³ecznej teorii uzasadnionego dzia³ania 
+Ajzena i~Fishbeina (\emph{Theory of Reasoned Action},
+TRA) i~teorii planowanego 
+dzia³ania (\emph{Theory of Planned Behaviour}, TPB) 
+bêd±cej jej
+rozwiniêciem~\citep{FishbeinAjzen1975,Ajzen1991}.
+Wed³ug teorii uzasadnionego dzia³ania
+dzia³anie poprzedza \emph{intencja}, która z~kolei
+kszta³tuje siê pod wp³ywem dwóch czynników: \emph{subiektywnej
+  normy\/}\footnote{Subiektywne normy
+  (SN, \emph{subjective norms\/}) to ,,przekonania jednostki na ile jej
+  dzia³ania bêd± akceptowane na tak lub nie przez wa¿ne dla tej
+  jednostki osoby''~(\citet[s.~302]{Ajzen1991} za Venkateshem i~Davisem~\citeyearpar[s.~187]{VenkateshDavis00}).}
+oraz~\emph{postawy\/}\footnote{Postawa wzglêdem zachowania
+  (ATT, \emph{attitude toward behaviour\/}), to przekonania wzglêdem
+  konsekwencji zachowania oraz ocena tych konsekwencji dla jednostki.}
+wzglêdem tego zachowania.  Wreszcie postawy wynikaj± z~przekonañ
+(\emph{beliefs\/}) wzglêdem u¿ytkowania (systemów informacyjnych w~tym
+przypadku). 
+Teoria planowanego dzia³ania
+jest rozszerzeniem TRA i~zak³ada, ¿e dzia³ania kszta³tuje
+oprócz norm subiektywnych i~postaw tak¿e trzeci 
+czynnik okre¶lany jako \emph{postrzegana kontrola 
+behawioralna\/}\footnote{Postrzegana kontrola 
+behawioralna\label{TPB-def} (PBC), to
+przekonanie co do mo¿liwo¶ci wykonania dzia³ania~\citep{Ajzen-tpb-www}.
+Ajzen \citeyearpar[s.~18]{Ajzen1991}
+wskazuje na podobieñstwo PBC z~czynnikiem samoskuteczno¶ci
+z~teorii spo³ecznego uczenia~\citep{Bandura1994}. }.
+PBC jest wykorzystywany w~rozszerzonych wersjach modelu TAM, 
+por.~przyk³adowo~\cite{VenkateshEtAl03} lub~\cite{MathiesonEtAl01}.
+
+TRA/TBP to ogólny model zachowania a~jego konkretyzacja
+polega m.in. na okre¶leniu przekonañ, które s± istotne dla zachowania
+bêd±cego przedmiotem zainteresowania badacza. Inne przekonania
+determinuj± palanie b±d¼ nie palenie tytoniu a~inne u¿ywanie b±d¼ nie
+u¿ywanie aplikacji komputerowych.  Davis postuluje, ¿e kluczow± rolê
+odgrywaj± dwa przekonania\footnote{Ajzen i~Fishbein rekomenduj± wiêcej
+  -- od piêciu do dziewiêciu
+  przekonañ~\citep[s.~218]{FishbeinAjzen1975}.} nazwane przez niego
+postrzegana u¿yteczno¶æ \emph{preceived
+  usefulness\/}) oraz postrzegana ³atwo¶æ
+u¿ytkowania (PEOU, \emph{perceived ease of~use\/}).
+
+Pierwsze przekonanie jest okre¶lone
+jako ,,stopieñ przekonania u¿ytkownika, ¿e korzystanie z~okre¶lonego
+systemu zwiêkszy jego efektywno¶æ
+pracy''~\citep{DavisetAl1989,Davis1989}.  Z~kolei postrzegana ³atwo¶æ
+u¿ytkowania jest definiowana jako ,,stopieñ przekonania u¿ytkownika,
+¿e korzystanie z~okre¶lonego systemu bêdzie
+³atwe''~\citep{DavisetAl1989,Davis1989}. Skale pomiarowe dla obu
+czynników zosta³y opracowane i~zweryfikowane w~pracach
+Davisa i~innych~\citeyearpar{Davis1989} oraz Adamsa i~innych~\citeyearpar{AdamsNelsonTodd1992}.
+Reasumuj±c:
+,,klasyczny'' model TAM zawiera piêæ czynników
+(por.~rys.~\ref{r1-TAM}): postrzegana u¿yteczno¶æ (PU), postrzegana
+³atwo¶æ u¿ytkowania (PEOU), postawa wobec u¿ywania (ATT), intencja
+u¿ywania (BI) oraz wykorzystanie (USE)\footnote{Czynniki ATT oraz BI
+  s± wprost zaadaptowane z~modeli TRA/TPB.}.
+
+\begin{figure}[!tbh]
+  \includegraphics[width=\textwidth]{./TAM-pl}
+%%\caption[Model Akceptacji Technologii]{Model Akceptacji Technologii, opracowanie w³asne za~\cite{DavisetAl1989}}
+\caption{Model Akceptacji Technologii}
+\source{opracowanie w³asne za:~\cite{DavisetAl1989}}
+\label{r1-TAM}
+\end{figure}
+
+Model TAM nie zawiera czynnika
+\emph{norm subiektywnych}, który to czynnik jest wed³ug hipotez
+TRA/TBP istotnym determinantem intencji~(\citet{FishbeinAjzen1975},
+\citet[s.~150]{TaylorTodd95} oraz \citet[s.~59--60]{Burton-JonesHubona05}).
+Davis \citeyearpar[s.~986]{DavisetAl1989} upro¶ci³ swój model usuwaj±c z~niego czynnik \emph{norm
+  subiektywnych\/} poniewa¿, po pierwsze ich wp³yw
+w~przeprowadzonych przez niego eksperymentach nie by³ znacz±cy, 
+a~po drugie
+stosowane do pomiaru \emph{norm subiektywnych\/} skale psychometryczne
+by³y w~jego opinii s³abe\footnote{Ta decyzja by³a
+  s³uszna w~sytuacji nasycenie organizacji w~technologiê IT by³o
+  niskie, gdy u¿ytkownicy pos³ugiwali siê prostymi systemami, a~ich
+  wykorzystanie w~organizacji by³o dobrowolne -- typowa sytuacji
+  w~koñcu lat osiemdziesi±tych. 
+Powstaje pytanie na ile sytuacja powy¿sza jest w~dalszym ci±gu aktualna--wspó³cze¶nie
+typowe jest raczej pos³ugiwanie siê aplikacjami wymagaj±cymi uprzedniego
+intensywnego szkolenia a~do korzystania z~której pracownik jest zobowi±zany. 
+Przyk³adami niech bêd± systemy zarz±dzania organizacj± typu ERP czy systemy 
+EDI/IOS pozwalaj±ce
+na wymianê danych pomiêdzy organizacjami.}. 
+Teoria TRA/TBP zak³ada ponadto, ¿e przekonania wyja¶niaj± 
+intencje \emph{wy³±cznie\/}, za po¶rednictwem norm subiektywnych i~postawy 
+(oraz kontroli behawioralnej w~przypadku TPB)\footnote{Innymi s³owy 
+ normy subiektywne i~postawy w~ca³o¶ci mediuj± wp³yw zmiennych zewnêtrznych.} podczas gdy w~oryginalnym
+modelu TAM (por.~rys.~\ref{r1-TAM}) 
+postulowana jest  statystycznie istotna bezpo¶rednia zale¿no¶æ tak¿e pomiêdzy PU-BI.
+Pó¼niejsze badania potwierdzi³y empirycznie, ¿e istotnie w~modelu TAM istnieje zwi±zek pomiêdzy
+PU-BI. W rezultacie w~pó¼niejszych wersjach modelu TAM postawy (ATT)
+zosta³y usuniête a czynniki
+PU/PEU determinuj± bezpo¶rednio intencje\footnote{Por. 
+przyk³adowo \cite{IgbariaetAl97,Burton-JonesHubona05,VenkateshDavis00}.}.
+
+\begin{table}[!tbh]\small
+\caption{Opisowe statystyki dla podstawowych relacji z~modelu TAM}
+\label{tab:ES-TAM}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\stretch{1}}}lrrrr} \hline
+Czynniki   & l.~badañ  & $r_{\rm min}$ & $r_{\rm max}$ & $\bar r$ \\ \hline
+PU-USE     &  72 & -0,41 &  0,91  & 0,40 \\
+PEOU-USE   &  61 & -0,20 &  0,98  & 0,29 \\ 
+PEOU-PU    & 123 & -0,26 &  0,81  & 0,44 \\ \hline
+\end{tabular*}
+\source{\cite{ShumailaetAl2007b}}
+\end{table}
+
+TAM zak³ada, ¿e \emph{zmienne zewnêtrzne\/} (charakterystyka systemu IT,
+charakterystyka u¿ytkownika, czynniki organizacyjne) wp³ywaj±
+\emph{po¶rednio\/} na intencje determinuj±c wielko¶æ PU/PEOU~\cite[s.~187]{VenkateshDavis00},
+przy czym wp³yw czynnika PU jest wiêkszy ni¿ PEOU. Ponadto wykorzystanie {\SITI}
+mo¿e byæ przewidywane na podstawie intencji.
+Zamiarem Davisa by³o opracowanie  ,,prostego, teoretycznie 
+uzasadnionego modelu, zdolnego do obja¶nienia czynników 
+akceptacji systemów komputerowych w~sposób ogólny, to jest dla ró¿nych grup u¿ytkowników
+koñcowych i~ró¿nych rodzajów systemów [...] TAM ma stanowiæ teoretyczn±
+podstawê obja¶niaj±c± w~jaki sposób zewnêtrzne czynniki wp³ywaj± 
+na przekonania, postawy i~intencje''~\cite[s.~985]{Davis1989}.
+Z~uwagi na trudno¶æ z~pomiarem u¿ytkowania systemu wiele badañ pos³uguje siê
+modelem czterosk³adnikowym zak³adaj±cym, 
+¿e wysoka 
+warto¶æ BI determinuje wysok± warto¶æ u¿ytkowania.
+
+%% %% %% 
+\chapter{Tytu³ rozdzia³u trzeciego}
+
+\section{Tytu³ punktu pierwszego}
+
+Wspó³cze¶nie organizacje rzadko posiadaj± wiedzê i~zasoby niezbêdne do
+realizacji pierwszych dwóch faz.  Oprogramowanie jest wytwarzane przez
+zewnêtrznych --~z~punktu widzenia organizacji --~\emph{dostawców},
+a~\emph{uruchamiane} przez
+\emph{konsultantów\/} oraz \emph{integratorów}\footnote{%%
+ Integrator kupuje, instaluje i~testuje aplikacje 
+ oraz sprzêt, podczas gdy rol± konsultantów jest 
+ wy³±cznie doradztwo~\citep{MesserschmittSzyperski03}.}.  
+Faza
+\emph{uruchamiania\/} obejmuje nie tylko zakup sprzêtu
+i~oprogramowania, ale tak¿e 
+us³ugi doradcze 
+i~\emph{integracjê}, co oznacza instalacjê,
+testowanie, dostosowanie wewnêtrznych procesów organizacji
+oraz niezbêdne szkolenia. 
+Wynikiem 
+jest system gotowy do dzia³ania.
+Eksploatacja z~kolei, to zapewnienie bezawaryjnej pracy systemu,
+w~tym pomoc u¿ytkownikom koñcowym. 
+Zwykle organizacja zatrudnia w~tym celu wyszkolonych 
+pracowników 
+lub najmuje firmê zewnêtrzn±.  
+Program z~regu³y jest wykorzystywany na podstawie \emph{umowy licencyjnej\/}
+(por.~punkt~\ref{sec:cpr-lic}), st±d przychody z~fazy
+implementacji mo¿na uto¿samiaæ z~przychodami z~tytu³u udzielonych
+licencji.  Tabela~\ref{tab:valimaki} pokazuje 
+udzia³ przychodów z~tytu³u op³at licencyjnych
+ i~us³ug w~wybranych 
+przedsiêbiorstwach sektora {\SITI}.
+
+\begin{table}[!tbh]\small
+\caption{Przychody z~tytu³u licencji i~us³ug 
+ na przyk³adzie wybranych przedsiêbiorstw sektora {\SITI}  w~2004~r.}
+\label{tab:valimaki}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\stretch{1}}}lrrl} \hline
+Nazwa firmy & Licencje$^{\rm a}$ & Przychody$^{\rm b}$ & Produkowane oprogramowanie \\ \hline
+Adobe\index{Adobe Inc.} & 98 &  1,7 & DTP, grafika \\
+Symantec & 98 &  1,8 &  zabezpieczenie systemów {\SITI}\\ 
+Microsoft\index{Microsoft} & 94 & 31,5 & system operacyjny, aplikacje \\ %%\hline
+Oracle & 79 & 10,1 & bazy danych, aplikacje korporacyjne \\
+CA & 69 &  3,2 & aplikacje korporacyjne \\ 
+Siebel & 36 &  1,3 & aplikacje korporacyjne \\
+SAP & 31 &  9,7 & aplikacje korporacyjne \\
+Novell & 26 &  1,1 & system operacyjny, aplikacje \\
+IBM & 25 & 61,3 & sprzêt, aplikacje korporacyjne \\ \hline
+\end{tabular*}
+\begin{footnotesize}
+$^{\rm a}$udzia³ przychodów z~tytu³u op³at 
+licencyjnych w~\%; $^{\rm b}$roczny przychód w~mld USD 
+\end{footnotesize}
+\source{opracowanie w³asne na podstawie:~\citet[s.~28]{Valimaki2005}}
+\end{table}
+
+Dane zawarte w~tabeli~\ref{tab:valimaki} pokazuj±, ¿e przychód
+niektórych przedsiêbiorstw praktycznie w~ca³o¶ci pochodzi z~op³at
+licencyjnych.  Przyk³adowo 94\% przychodu firmy
+Microsoft\index{Microsoft} pochodzi z~licencji; co wiêcej --~80\%
+przychodów i~100\% zysku pochodzi ze sprzeda¿y zaledwie trzech
+programów: systemu Windows na rynku masowym i~korporacyjnym oraz
+oprogramowania biurowego MS~Office~\cite[s.~55]{Cusumano2004}.
+Z~kolei dzia³aj±ca na rynku korporacyjnym firma SAP osi±ga a¿ 70\% przychodów
+z~tytu³u us³ug zwi±zanych ze sprzedawanym oprogramowaniem.
+Te ró¿nice implikuj± strategiê rynkow± firmy, w~tym wykorzystanie
+oprogramowania \emph{Open Source}, które --~co poka¿emy dalej
+--~w~du¿ym stopniu wyklucza strategie rynkowe
+oparte na przychodach z~tytu³u 
+op³at licencyjnych~\citep[s.~28]{Valimaki2005}.
+
+\section{Tytu³ punktu drugiego \label{sec:cpr-lic}}
+
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+
+\chapter{Tytu³ rozdzia³u czwartego}
+
+\section{Tytu³ punktu pierwszego}
+
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+Tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden, tre¶æ punktu jeden.
+
+\section{Tytu³ punktu drugiego}
+
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+Tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa, tre¶æ punktu dwa.
+
+\summary
+
+Zakoñczenie zakoñczenia powinno obejmowaæ:
+
+Zwiêz³y opis uzyskanych wyników;
+
+Wskazanie na napotkanie trudno¶ci i~potencjalne s³abo¶ci;
+
+Wskazanie na  potencjalnie ciekawe tematy do dalszych badañ, które s± konsekwencj±
+wyników uzyskanych przez autora. 
+
+%
+% Za³±czniki (opcjonalnie):
+\appendix
+\chapter{Tytu³ za³±cznika jeden}
+
+Tre¶æ za³±cznika jeden. Tre¶æ za³±cznika jeden. Tre¶æ za³±cznika jeden
+Tre¶æ za³±cznika jeden. Tre¶æ za³±cznika jeden.  Tre¶æ za³±cznika
+jeden.
+
+\chapter{Tytu³ za³±cznika dwa}
+
+Tre¶æ za³±cznika dwa. Tre¶æ za³±cznika dwa. Tre¶æ za³±cznika dwa Tre¶æ
+za³±cznika dwa. Tre¶æ za³±cznika dwa.  Tre¶æ za³±cznika dwa.
+
+
+%% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %%
+\clearpage 
+\phantomsection %% << poprawienie linka generowanego przez hyperref
+\addcontentsline{toc}{chapter}{\refname}
+%%
+%% Aby utworzyæ spis tre¶ci nale¿y uruchomiæ bibtexa: bibtex wkmgr2
+\bibliography{./wkmgr}
+%
+% Spis tabel (je¿eli jest potrzebny):
+\clearpage 
+\phantomsection %% << poprawienie linka generowanego przez hyperref
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+
+% Spis rysunków (je¿eli jest potrzebny):
+\clearpage 
+\phantomsection %% << poprawienie linka generowanego przez hyperref
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% coding: iso-8859-2
+%%% LocalWords:  czterosk³adnikowym ERP samoskuteczno¶ci
+%%% End: 
+
+

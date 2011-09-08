@@ -1,0 +1,46 @@
+\documentclass[a4paper,twoside]{report}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy} %% deklarujemy styl "fancy"
+\fancyhead{} \fancyfoot{} %% "zresetuj" zawarto∂Ê pagin
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\fancyhead[LE,RO]{\normalfont \small \thepage}
+\fancyhead[LO]{\normalfont \small \itshape \rightmark}
+\fancyhead[RE]{\normalfont \small \itshape \leftmark}
+
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} 
+
+\begin{document}
+
+
+\chapter{Rozdzia≈Ç pierwszy}
+
+\section{Punkt jeden-jeden}
+a\newpage
+b\newpage
+\section{Punkt jeden-dwa}
+x\newpage
+y\newpage
+z\newpage
+p\newpage
+
+%% %% %% %% %% %% %% %%
+\chapter{Rozdzia≈Ç drugi}
+\section{Punkt dwa-jeden}
+q\newpage
+r\newpage
+s\newpage
+t\newpage
+\section{Punkt dwa-dwa}
+
+\chapter{Rozdzia≈Ç trzeci}
+\section{Punkt 3-jeden}
+w\newpage
+
+\section{Punkt 3-2}
+
+\end{document}
